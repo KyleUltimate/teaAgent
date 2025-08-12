@@ -1,7 +1,5 @@
 package com.kyle.ai.other.controller;
 
-import com.alibaba.cloud.ai.dashscope.api.DashScopeAgentApi;
-import com.alibaba.cloud.ai.dashscope.api.DashScopeApi;
 import com.alibaba.cloud.ai.dashscope.api.DashScopeImageApi;
 import com.alibaba.cloud.ai.dashscope.image.DashScopeImageModel;
 import com.alibaba.cloud.ai.dashscope.image.DashScopeImageOptions;
@@ -16,12 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 
 @RestController
-public class OtherController {
+public class ImageModelController {
 
     @Autowired
     private DashScopeImageModel imageModel;
@@ -49,8 +46,6 @@ public class OtherController {
             httpServletResponse.setHeader("Content-Type", MediaType.IMAGE_PNG_VALUE);
             httpServletResponse.getOutputStream().write(in.readAllBytes());
             httpServletResponse.getOutputStream().flush();
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

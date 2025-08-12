@@ -21,6 +21,8 @@
         <module>spring_ai_function</module>
         <module>spring_ai_alibaba</module>
         <module>spring_ai_other</module>
+        <module>spring_ai_rag</module>
+        <module>spring_ai_all</module>
     </modules>
 
     <properties>
